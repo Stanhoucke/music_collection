@@ -3,6 +3,9 @@ from models.artist import Artist
 import repositories.album_repository as album_repository
 import repositories.artist_repository as artist_repository
 
+album_repository.delete_all()
+artist_repository.delete_all()
+
 artist_1 = Artist("Taylor Swift", 29)
 artist_repository.save(artist_1)
 

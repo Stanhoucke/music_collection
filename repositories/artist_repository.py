@@ -9,3 +9,10 @@ def save(artist):
     results = run_sql(sql, values)
     artist.id = results[0]['id']
     return artist
+
+def delete_all():
+    sql = "DELETE FROM artists"
+    run_sql(sql)
+
+
+  
