@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.artist import Artist
 from models.album import Album
+import repositories.album_repository as album_repository
 
 def save(artist):
     sql = "INSERT INTO artists (name, age) VALUES (%s, %s) RETURNING *"
@@ -38,4 +39,15 @@ def select_all():
 def update(artist):
     sql = "UPDATE artists SET (name, age) = (%s, %s) WHERE id = %s"
     values = [artist.name, artist.age, artist.id]
+    run_sql(sql, values)
+
+def delete(artist):
+    artist_albums = album_repository.select_by_artist(artist)
+    for album in artist_albums:
+        sql = "UPDATE albums SET artist_id = NULL WHERE id = %s"
+        values = [album.id]
+        run_sql(sql, values)
+
+    sql = "DELETE FROM artists WHERE id = %s"
+    values =[artist.id]
     run_sql(sql, values)

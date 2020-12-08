@@ -18,8 +18,8 @@ artist_repository.save(artist_2)
 # for artist in res:
 #     print(artist.__dict__)
 
-update_artist_1 = Artist("Taylor Swift", 30, artist_1.id)
-artist_repository.update(update_artist_1)
+# update_artist_1 = Artist("Taylor Swift", 30, artist_1.id)
+# artist_repository.update(update_artist_1)
 
 # Albums
 album_1 = Album("1989", 2014, artist_1)
@@ -39,5 +39,8 @@ album_repository.save(album_3)
 # for album in res:
 #     print(album.__dict__)
 
-update_album_1 = Album("1989", 2015, artist_1, album_1.id)
-album_repository.update(update_album_1)
+# update_album_1 = Album("1989", 2015, artist_1, album_1.id)
+# album_repository.update(update_album_1)
+
+album_repository.delete(album_1)
+artist_repository.delete(artist_1)
