@@ -16,6 +16,7 @@ def delete_all():
     run_sql(sql)
 
 def select(id):
+    album = None
     sql = "SELECT * FROM albums WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
@@ -29,7 +30,7 @@ def select_all():
     albums = []
 
     sql = "SELECT * FROM albums"
-    result = run_sql(sql)[0]
+    result = run_sql(sql)
 
     for row in result:
         artist = artist_repository.select(row['artist_id'])

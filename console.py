@@ -12,6 +12,12 @@ artist_repository.save(artist_1)
 artist_2 = Artist("Childish Gambino", 37)
 artist_repository.save(artist_2)
 
+# print(artist_repository.select(16).__dict__)
+
+# res = artist_repository.select_all()
+# for artist in res:
+#     print(artist.__dict__)
+
 # Albums
 album_1 = Album("1989", 2014, artist_1)
 album_repository.save(album_1)
@@ -19,3 +25,9 @@ album_2 = Album("Because the Internet", 2013, artist_2)
 album_repository.save(album_2)
 album_3 = Album("Awaken, My Love!", 2016, artist_2)
 album_repository.save(album_3)
+
+# print(album_repository.select(31).__dict__)
+
+# res = album_repository.select_all()
+# for album in res:
+#     print(album.__dict__)
