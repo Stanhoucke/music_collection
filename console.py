@@ -38,3 +38,6 @@ album_repository.save(album_3)
 # res = album_repository.select_by_artist(artist_2)
 # for album in res:
 #     print(album.__dict__)
+
+update_album_1 = Album("1989", 2015, artist_1, album_1.id)
+album_repository.update(update_album_1)

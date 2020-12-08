@@ -13,3 +13,6 @@ CREATE TABLE albums (
     year INT,
     artist_id INT REFERENCES artists(id)
 );
+
+
+-- UPDATE albums SET (title, year, artist_id) = ('1989', 2015, 1) WHERE id = 1;

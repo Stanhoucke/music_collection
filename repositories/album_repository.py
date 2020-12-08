@@ -49,3 +49,8 @@ def select_by_artist(artist):
         album = Album(row['title'], row['year'], artist, row['id'])
         albums.append(album)
     return albums
+
+def update(album):
+    sql = "UPDATE albums SET (title, year, artist_id) = (%s, %s, %s) WHERE id = %s"
+    values = [album.title, album.year, album.artist.id, album.id]
+    run_sql(sql, values)
