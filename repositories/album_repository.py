@@ -37,3 +37,15 @@ def select_all():
         album = Album(row['title'], row['year'], artist, row['id'])
         albums.append(album)
     return albums
+
+def select_by_artist(artist):
+    albums = []
+
+    sql = "SELECT * FROM albums WHERE artist_id = %s"
+    values = [artist.id]
+    result = run_sql(sql, values)
+
+    for row in result:
+        album = Album(row['title'], row['year'], artist, row['id'])
+        albums.append(album)
+    return albums

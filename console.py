@@ -31,3 +31,9 @@ album_repository.save(album_3)
 # res = album_repository.select_all()
 # for album in res:
 #     print(album.__dict__)
+
+print(artist_1.id)
+
+res = album_repository.select_by_artist(artist_2)
+for album in res:
+    print(album.__dict__)
